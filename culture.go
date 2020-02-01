@@ -1,21 +1,28 @@
 package gott
 
 type CultureInfo struct {
+
+	//culture name
 	Culture string
+
+	//the full name of culture
 	Name    string
+
+	//culture code
 	Code    int
+
+	//culture ISO code
 	ISO     string
+
 
 }
 
-
-//
 var cultures = map[string]CultureInfo{
-	"af-ZA":    {Culture: "af-ZA", Name: "Afrikaans - South Africa", Code: 0x0436, ISO: "AFK"},
-	"sq-AL":    {Culture: "sq-AL", Name: "Albanian - Albania", Code: 0x041C, ISO: "SQI"},
-	"ar-DZ":    {Culture: "ar-DZ", Name: "Arabic - Algeria", Code: 0x1401, ISO: "ARG"},
-	"ar-BH":    {Culture: "ar-BH", Name: "Arabic - Bahrain", Code: 0x3C01, ISO: "ARH"},
-	"ar-EG":    {Culture: "ar-EG", Name: "Arabic - Egypt", Code: 0x0C01, ISO: "ARE"},
+		"af-ZA":    {Culture: "af-ZA", Name: "Afrikaans - South Africa", Code: 0x0436, ISO: "AFK"},
+		"sq-AL":    {Culture: "sq-AL", Name: "Albanian - Albania", Code: 0x041C, ISO: "SQI"},
+		"ar-DZ":    {Culture: "ar-DZ", Name: "Arabic - Algeria", Code: 0x1401, ISO: "ARG"},
+		"ar-BH":    {Culture: "ar-BH", Name: "Arabic - Bahrain", Code: 0x3C01, ISO: "ARH"},
+		"ar-EG":    {Culture: "ar-EG", Name: "Arabic - Egypt", Code: 0x0C01, ISO: "ARE"},
 	"ar-IQ":    {Culture: "ar-IQ", Name: "Arabic - Iraq", Code: 0x0801, ISO: "ARI"},
 	"ar-JO":    {Culture: "ar-JO", Name: "Arabic - Jordan", Code: 0x2C01, ISO: "ARJ"},
 	"ar-KW":    {Culture: "ar-KW", Name: "Arabic - Kuwait", Code: 0x3401, ISO: "ARK"},
@@ -86,10 +93,10 @@ var cultures = map[string]CultureInfo{
 	"hu-HU":    {Culture: "hu-HU", Name: "Hungarian - Hungary", Code: 0x040E, ISO: "HUN"},
 	"is-IS":    {Culture: "is-IS", Name: "Icelandic - Iceland", Code: 0x040F, ISO: "ISL"},
 	"id-ID":    {Culture: "id-ID", Name: "Indonesian - Indonesia", Code: 0x0421, ISO: "IND"},
-	"default":	{Culture: "default", Name: "Default culture", Code: 0x0, ISO: ""},
+	"default":  {Culture: "default", Name: "Default culture", Code: 0x0, ISO: ""},
 }
 
 
 func GetCurrentCulture() CultureInfo {
-	return CultureInfo{}
+	return cultures["default"]
 }
