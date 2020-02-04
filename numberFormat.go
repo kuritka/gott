@@ -1,6 +1,6 @@
 package gott
 
-type NumberFormatInfo struct {
+type numberFormatInfo struct {
 
 	//The number of decimal places to use in currency values
 	//CurrencyDecimalDigits = 2: $1,234.00
@@ -20,6 +20,7 @@ type NumberFormatInfo struct {
 	//The number of digits in each group to the left of the decimal in currency values
 	//CurrencyGroupSizes = []{ 3, 4, 5 }; $55,55555,55555,55555,4444,333.00
 	//CurrencyGroupSizes = []{ 3, 4, 0 }; $55555555555555555,4444,333.00
+	//CurrencyGroupSizes = []{ 3 }; $123,456,789,012,345.00
 	CurrencyGroupSizes []int32
 
 	//The format pattern for negative currency
@@ -139,3 +140,12 @@ type NumberFormatInfo struct {
 	//The string that denotes that the associated number is positive
 	PositiveSign string
 }
+
+
+var (
+	//possible formatting patterns of currencies
+	currencyPositivePattern = []string{"$n","n$","$ n","n $"}
+
+	//possible formatting patterns of currencies
+	currencyNegativePattern = []string{"($n)","-$n","$-n","$n-","(n$)","-n$","n-$","n$-","-n $","-$ n","n $-","$ n-","$ -n","n- $","($ n)","(n $)"}
+)
